@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -53,7 +52,6 @@
             100% { transform: translate(50px, 50px); }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -95,7 +93,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -163,7 +160,6 @@
             background: var(--primary);
         }
 
-        /* Section Styles */
         section {
             padding: 5rem 5%;
             max-width: 1200px;
@@ -180,7 +176,6 @@
             background-clip: text;
         }
 
-        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -210,7 +205,6 @@
             font-size: 0.9rem;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,7 +251,6 @@
             color: var(--light);
         }
 
-        /* Contact Section */
         .contact-content {
             max-width: 600px;
             margin: 0 auto;
@@ -290,7 +283,6 @@
             transform: translateY(-3px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -298,7 +290,6 @@
             border-top: 1px solid rgba(99, 102, 241, 0.2);
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -314,7 +305,6 @@
             animation: fadeInUp 1s ease;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
@@ -345,8 +335,8 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Your Name</h1>
-            <p class="subtitle">Developer • Designer • Creator</p>
+            <h1>Mohammad Amin Basiri</h1>
+            <p class="subtitle">Data Scientist • ML Engineer • PhD Researcher</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -358,15 +348,21 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hello! I'm a passionate developer who loves creating beautiful and functional digital experiences. With a keen eye for design and a love for clean code, I bring ideas to life through web development.</p>
-                <p>I specialize in building modern, responsive websites and applications that not only look great but also provide exceptional user experiences.</p>
+                <p>Hello! I'm a PhD candidate in Data Science and Analytics at the University of Oklahoma with a passion for developing intelligent systems that solve real-world problems. My research focuses on Scientific Machine Learning, Open-World Classification, and time-series analysis of complex systems.</p>
+                <p>I specialize in building interpretable AI models that incorporate domain knowledge, with applications ranging from brain signal analysis to autonomous robotics. I combine strong theoretical foundations with practical implementation skills to create impactful solutions.</p>
                 <div class="skills">
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">Python</span>
-                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Scientific ML</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Robotics</span>
+                    <span class="skill-tag">C/C++</span>
                 </div>
             </div>
             <div class="about-image">
@@ -381,30 +377,63 @@
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Project One</h3>
-                <p>A modern web application built with cutting-edge technologies. This project showcases my ability to create responsive and interactive user interfaces.</p>
+                <h3>SINDyG: Graph-Informed Network Dynamics Discovery</h3>
+                <p>Developed a novel algorithm incorporating graph-informed regularization into sparse regression for accurate discovery of network dynamics. Validated on Stuart-Landau oscillator networks with superior performance in identifying complex system behaviors.</p>
                 <div class="project-tags">
-                    <span class="project-tag">React</span>
-                    <span class="project-tag">TypeScript</span>
-                    <span class="project-tag">Tailwind</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Scientific ML</span>
+                    <span class="project-tag">Time-Series</span>
+                    <span class="project-tag">Graph Theory</span>
                 </div>
             </div>
             <div class="project-card">
-                <h3>Project Two</h3>
-                <p>An innovative solution for real-world problems. Features include real-time updates, data visualization, and seamless user experience.</p>
+                <h3>Open-World Classification System</h3>
+                <p>Built an adaptive framework for identifying and categorizing previously unseen classes in dynamic environments. Achieved 75-93% accuracy improvement across text, image, and sensor datasets, advancing beyond traditional closed-world assumptions.</p>
                 <div class="project-tags">
-                    <span class="project-tag">Node.js</span>
-                    <span class="project-tag">MongoDB</span>
-                    <span class="project-tag">Express</span>
+                    <span class="project-tag">R</span>
+                    <span class="project-tag">Deep Learning</span>
+                    <span class="project-tag">Classification</span>
+                    <span class="project-tag">Novel Class Discovery</span>
                 </div>
             </div>
             <div class="project-card">
-                <h3>Project Three</h3>
-                <p>A creative design project that combines aesthetics with functionality. Built with attention to detail and user-centered design principles.</p>
+                <h3>EEG-Based Alzheimer's Classification</h3>
+                <p>Developed multilayer cross-frequency functional connectivity framework for extracting spatiotemporal EEG features. Achieved 15-20% accuracy improvement over baseline methods for early Alzheimer's disease detection.</p>
                 <div class="project-tags">
-                    <span class="project-tag">HTML/CSS</span>
-                    <span class="project-tag">JavaScript</span>
-                    <span class="project-tag">Animation</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Signal Processing</span>
+                    <span class="project-tag">Healthcare AI</span>
+                    <span class="project-tag">Neural Networks</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Face Recognition for Social Robotics</h3>
+                <p>Architected and deployed a deep learning face recognition system achieving 95-97% accuracy under challenging real-world conditions. Implemented for time-clock systems and service robots with robust data preprocessing pipelines.</p>
+                <div class="project-tags">
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">OpenCV</span>
+                    <span class="project-tag">Production ML</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Autonomous Robot Path Planning</h3>
+                <p>Created physics-informed and ML-based path-planning algorithms with novel loss functions for superior obstacle avoidance. Modeled aerial robot formation control with security measures against cyber-physical attacks.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">MATLAB</span>
+                    <span class="project-tag">Robotics</span>
+                    <span class="project-tag">Control Systems</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Credit Card Fraud Detection</h3>
+                <p>Developed ensemble Machine Learning models (SVM, Random Forest, Logistic Regression) achieving 99.7% accuracy in detecting fraudulent transactions. Applied advanced feature engineering and model optimization techniques.</p>
+                <div class="project-tags">
+                    <span class="project-tag">R</span>
+                    <span class="project-tag">Machine Learning</span>
+                    <span class="project-tag">Fraud Detection</span>
+                    <span class="project-tag">Data Analytics</span>
                 </div>
             </div>
         </div>
@@ -414,16 +443,16 @@
         <h2>Get In Touch</h2>
         <div class="contact-content">
             <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 2rem;">
-                I'm always open to new opportunities and collaborations. Feel free to reach out!
+                I'm currently pursuing my PhD at the University of Oklahoma and always interested in research collaborations, innovative projects, and opportunities in AI/ML. Let's connect!
             </p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">
+                <a href="mailto:ma.basiri@ou.edu" class="contact-link">
                     📧 Email
                 </a>
-                <a href="https://github.com/mabasiri" class="contact-link" target="_blank">
+                <a href="https://github.com/mabasiri95" class="contact-link" target="_blank">
                     🐙 GitHub
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+                <a href="https://linkedin.com/in/mohammad-amin-basiri" class="contact-link" target="_blank">
                     💼 LinkedIn
                 </a>
             </div>
@@ -431,11 +460,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Mohammad Amin Basiri. All rights reserved.</p>
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -446,7 +474,6 @@
             });
         });
 
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
