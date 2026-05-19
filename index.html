@@ -94,16 +94,19 @@
         }
 
         .hero {
-            min-height: 100vh;
-            display: flex;
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -114,18 +117,33 @@
         }
 
         .hero-content .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             color: var(--gray);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-content p {
+             color: var(--gray);
+             margin-bottom: 1.5rem;
+             font-size: 1.1rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            height: 100%;
+            animation: fadeInUp 1s ease 0.4s backwards;
         }
 
         .cta-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 0.6s backwards;
         }
 
         .btn {
@@ -174,19 +192,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
         }
 
         .skills {
@@ -477,6 +482,17 @@
         }
 
         @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                order: -1; /* Move image to the top on mobile */
+                max-width: 300px; 
+                margin: 0 auto;
+            }
+
             .timeline::after {
                 left: 31px;
             }
@@ -509,13 +525,12 @@
                 font-size: 0.9rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
             section {
                 padding: 3rem 5%;
             }
+             .hero {
+                padding-top: 8rem;
+             }
         }
     </style>
 </head>
@@ -525,7 +540,6 @@
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#journey">Journey</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -533,20 +547,10 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>MA Basiri</h1>
-            <p class="subtitle">Data Scientist • ML Engineer • PhD Researcher</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>MA Basiri</h1>
+                <p class="subtitle">Data Scientist • ML Engineer • PhD Researcher</p>
                 <p>Hello! I'm a PhD candidate in Data Science and Analytics at the University of Oklahoma with a passion for developing intelligent systems that solve real-world problems. My research focuses on Scientific Machine Learning, Open-World Classification, and time-series analysis of complex systems.</p>
                 <p>I specialize in building interpretable AI models that incorporate domain knowledge, with applications ranging from brain signal analysis to autonomous robotics. I combine strong theoretical foundations with practical implementation skills to create impactful solutions.</p>
                 <div class="skills">
@@ -563,9 +567,13 @@
                     <span class="skill-tag">Robotics</span>
                     <span class="skill-tag">C/C++</span>
                 </div>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="images/IMG_20260303_213103_717_(2).jpg" alt="MA Basiri" style="width: 100%; border-radius: 15px; object-fit: cover; height: 100%;">
+            <div class="hero-image">
+                <img src="images/IMG_20260303_213103_717_(2).jpg" alt="MA Basiri">
             </div>
         </div>
     </section>
@@ -573,7 +581,7 @@
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+             <div class="project-card">
                 <h3>AutoSINDy: Automated Discovery of Nonlinear Dynamics</h3>
                 <p>A hybrid framework that automates the discovery of nonlinear dynamics by combining symbolic regression and sparse identification. It generates basis functions automatically, recovering ground-truth equations with 92.8% accuracy even in noisy conditions, and outperforming traditional methods in prediction and simplicity.</p>
                 <div class="project-tags">
@@ -777,7 +785,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .timeline-content').forEach(card => {
+        document.querySelectorAll('.project-card, .timeline-content, .hero-content, .hero-image').forEach(card => {
             observer.observe(card);
         });
     </script>
