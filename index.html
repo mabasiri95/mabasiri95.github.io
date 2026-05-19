@@ -244,6 +244,20 @@
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
+        
+        .project-card .summary {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        details > summary {
+          list-style: none;
+          cursor: pointer;
+        }
+        details > summary::-webkit-details-marker {
+          display: none;
+        }
 
         .project-tags {
             display: flex;
@@ -316,7 +330,7 @@
         }
 
         .timeline-item {
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             position: relative;
             padding-left: 60px;
         }
@@ -324,7 +338,7 @@
         .timeline-icon {
             position: absolute;
             left: 0;
-            top: -5px;
+            top: 1rem;
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -339,17 +353,31 @@
         }
 
         .timeline-card {
+            background: transparent;
+            border: none;
+            border-radius: 15px;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card summary {
             background: rgba(42, 42, 42, 0.5);
             border: 1px solid rgba(0, 168, 150, 0.2);
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s ease;
+            outline: none;
         }
-
-        .timeline-card:hover {
+        
+        .timeline-card summary:hover {
             border-color: var(--secondary);
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 168, 150, 0.2);
+        }
+
+        .timeline-card details[open] summary {
+             border-bottom-left-radius: 0;
+             border-bottom-right-radius: 0;
         }
 
         .timeline-header h4 {
@@ -369,6 +397,15 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
             margin-top: 0.25rem;
+        }
+
+        .timeline-body {
+            background: rgba(42, 42, 42, 0.5);
+            border: 1px solid rgba(0, 168, 150, 0.2);
+            border-top: none;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding: 2rem;
         }
 
         .timeline-body ul {
@@ -523,7 +560,11 @@
         <div class="projects-grid">
              <div class="project-card">
                 <h3>AutoSINDy: Automated Discovery of Nonlinear Dynamics</h3>
-                <p>A hybrid framework that automates the discovery of nonlinear dynamics by combining symbolic regression and sparse identification. It generates basis functions automatically, recovering ground-truth equations with 92.8% accuracy even in noisy conditions, and outperforming traditional methods in prediction and simplicity.</p>
+                <p class="summary">A framework that automates the discovery of nonlinear dynamics.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>A hybrid framework that automates the discovery of nonlinear dynamics by combining symbolic regression and sparse identification. It generates basis functions automatically, recovering ground-truth equations with 92.8% accuracy even in noisy conditions, and outperforming traditional methods in prediction and simplicity.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Scientific ML</span>
@@ -537,7 +578,11 @@
             </div>
             <div class="project-card">
                 <h3>Open-World Classification System</h3>
-                <p>Built an adaptive framework for identifying and categorizing previously unseen classes in dynamic environments. Achieved 75-93% accuracy improvement across text, image, and sensor datasets, advancing beyond traditional closed-world assumptions.</p>
+                <p class="summary">An adaptive framework for identifying and categorizing previously unseen classes.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>Built an adaptive framework for identifying and categorizing previously unseen classes in dynamic environments. Achieved 75-93% accuracy improvement across text, image, and sensor datasets, advancing beyond traditional closed-world assumptions.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">R</span>
                     <span class="project-tag">Deep Learning</span>
@@ -550,7 +595,11 @@
             </div>
             <div class="project-card">
                 <h3>SINDyG: Graph-Informed Network Dynamics Discovery</h3>
-                <p>Developed a novel algorithm incorporating graph-informed regularization into sparse regression for accurate discovery of network dynamics. Validated on Stuart-Landau oscillator networks with superior performance in identifying complex system behaviors.</p>
+                <p class="summary">An algorithm that incorporates graph-informed regularization for the discovery of network dynamics.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>Developed a novel algorithm incorporating graph-informed regularization into sparse regression for accurate discovery of network dynamics. Validated on Stuart-Landau oscillator networks with superior performance in identifying complex system behaviors.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Scientific ML</span>
@@ -564,7 +613,11 @@
             </div>
             <div class="project-card">
                 <h3>EEG-Based Alzheimer's Classification</h3>
-                <p>Developed multilayer cross-frequency functional connectivity framework for extracting spatiotemporal EEG features. Achieved 15-20% accuracy improvement over baseline methods for early Alzheimer's disease detection.</p>
+                <p class="summary">A framework for extracting EEG features to improve Alzheimer's detection.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>Developed multilayer cross-frequency functional connectivity framework for extracting spatiotemporal EEG features. Achieved 15-20% accuracy improvement over baseline methods for early Alzheimer's disease detection.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Signal Processing</span>
@@ -577,7 +630,11 @@
             </div>
             <div class="project-card">
                 <h3>Database Design & Optimization for Job-Shop Accounting system</h3>
-                <p>Engineered a relational database structure, optimizing data storage and indexing strategies (Azure SQL). Constructed a database application to execute complex SQL queries for efficient transaction management (Java, SQL).</p>
+                <p class="summary">A project that involved engineering a relational database structure and optimizing it.</p>
+                 <details>
+                    <summary>Read more</summary>
+                    <p>Engineered a relational database structure, optimizing data storage and indexing strategies (Azure SQL). Constructed a database application to execute complex SQL queries for efficient transaction management (Java, SQL).</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Java</span>
                     <span class="project-tag">SQL</span>
@@ -590,7 +647,11 @@
             </div>
             <div class="project-card">
                 <h3>Face Recognition for Social Robotics</h3>
-                <p>Architected and deployed a deep learning face recognition system achieving 95-97% accuracy under challenging real-world conditions. Implemented for time-clock systems and service robots with robust data preprocessing pipelines.</p>
+                <p class="summary">A deep learning face recognition system for time-clock systems and service robots.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>Architected and deployed a deep learning face recognition system achieving 95-97% accuracy under challenging real-world conditions. Implemented for time-clock systems and service robots with robust data preprocessing pipelines.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">PyTorch</span>
                     <span class="project-tag">Computer Vision</span>
@@ -603,7 +664,11 @@
             </div>
             <div class="project-card">
                 <h3>Autonomous Robot Path Planning</h3>
-                <p>Created physics-informed and ML-based path-planning algorithms with novel loss functions for superior obstacle avoidance. Modeled aerial robot formation control with security measures against cyber-physical attacks.</p>
+                <p class="summary">A project that involved creating path-planning algorithms for obstacle avoidance.</p>
+                 <details>
+                    <summary>Read more</summary>
+                    <p>Created physics-informed and ML-based path-planning algorithms with novel loss functions for superior obstacle avoidance. Modeled aerial robot formation control with security measures against cyber-physical attacks.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">MATLAB</span>
@@ -617,7 +682,11 @@
             </div>
             <div class="project-card">
                 <h3>Pokemon Level Optimizer 🎮</h3>
-                <p>Interactive web application implementing greedy algorithm optimization for resource management. Calculates optimal leveling strategy to minimize coin expenditure while maximizing point gains using efficiency-based decision making.</p>
+                <p class="summary">An interactive web application that calculates the optimal leveling strategy.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>Interactive web application implementing greedy algorithm optimization for resource management. Calculates optimal leveling strategy to minimize coin expenditure while maximizing point gains using efficiency-based decision making.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">JavaScript</span>
                     <span class="project-tag">Algorithm Design</span>
@@ -631,7 +700,11 @@
             </div>
             <div class="project-card">
                 <h3>Other Selected Projects</h3>
-                <p>A collection of projects including a movie database console app, predictive analysis of cancer gene expression, credit card fraud detection, HR analytics on employee attrition, and student performance analysis.</p>
+                <p class="summary">A collection of various machine learning and data analysis projects.</p>
+                <details>
+                    <summary>Read more</summary>
+                    <p>A collection of projects including a movie database console app, predictive analysis of cancer gene expression, credit card fraud detection, HR analytics on employee attrition, and student performance analysis.</p>
+                </details>
                 <div class="project-tags">
                     <span class="project-tag">Java</span>
                     <span class="project-tag">SQL</span>
@@ -651,104 +724,128 @@
             <div class="timeline-item">
                 <div class="timeline-icon">👨‍🏫</div>
                 <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Instructor / Teaching Assistant</h4>
-                        <p>University of Oklahoma</p>
-                    </div>
-                    <div class="timeline-date">2023 - Present</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Instructed 600+ students over 4 semesters in C programming, adapting technical concepts for non-majors.</li>
-                            <li>Taught C programming and Linux/Unix workflows on the OU Supercomputing Cluster.</li>
-                            <li>Supported graduate-level Intelligent Data Analytics and Python for Data Science courses.</li>
-                        </ul>
-                    </div>
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Instructor / Teaching Assistant</h4>
+                                <p>University of Oklahoma</p>
+                            </div>
+                            <div class="timeline-date">2023 - Present</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Instructed 600+ students over 4 semesters in C programming, adapting technical concepts for non-majors.</li>
+                                <li>Taught C programming and Linux/Unix workflows on the OU Supercomputing Cluster.</li>
+                                <li>Supported graduate-level Intelligent Data Analytics and Python for Data Science courses.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">🔬</div>
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Research Assistant</h4>
-                        <p>University of Oklahoma | Data Science & Analytics Institute</p>
-                    </div>
-                    <div class="timeline-date">2022 - Present</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Developed AutoSINDy, a SciML framework achieving a 92.8% ground-truth recovery rate, eliminating the 51.7% failure rate of standard SINDy.</li>
-                            <li>Built an open-world classification framework that improved accuracy from a 24-51% baseline to 75-93%.</li>
-                            <li>Created SINDyG for networked systems, reducing model complexity by 20-30% while increasing accuracy.</li>
-                            <li>Engineered an EEG analysis framework improving Alzheimer's classification accuracy by 15-20%.</li>
-                        </ul>
-                    </div>
+                 <div class="timeline-card">
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Research Assistant</h4>
+                                <p>University of Oklahoma | Data Science & Analytics Institute</p>
+                            </div>
+                            <div class="timeline-date">2022 - Present</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Developed AutoSINDy, a SciML framework achieving a 92.8% ground-truth recovery rate, eliminating the 51.7% failure rate of standard SINDy.</li>
+                                <li>Built an open-world classification framework that improved accuracy from a 24-51% baseline to 75-93%.</li>
+                                <li>Created SINDyG for networked systems, reducing model complexity by 20-30% while increasing accuracy.</li>
+                                <li>Engineered an EEG analysis framework improving Alzheimer's classification accuracy by 15-20%.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">💼</div>
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Machine Learning Engineer</h4>
-                        <p>Tosan Techno Company & TaarLab</p>
-                    </div>
-                    <div class="timeline-date">2020</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Deployed a deep learning face recognition system for a commercial service robot and time-clock system.</li>
-                            <li>Managed a full-stack ML pipeline including data collection, preprocessing, and model optimization.</li>
-                        </ul>
-                    </div>
+                 <div class="timeline-card">
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Machine Learning Engineer</h4>
+                                <p>Tosan Techno Company & TaarLab</p>
+                            </div>
+                            <div class="timeline-date">2020</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Deployed a deep learning face recognition system for a commercial service robot and time-clock system.</li>
+                                <li>Managed a full-stack ML pipeline including data collection, preprocessing, and model optimization.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">👨‍🏫</div>
                 <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Teaching Assistant</h4>
-                        <p>University of Tehran</p>
-                    </div>
-                    <div class="timeline-date">2019 - 2020</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Crafted and evaluated assignments for graduate-level Data Analysis and Robotics courses.</li>
-                            <li>Instructed on neural networks and Machine Learning fundamentals for Mechatronics course.</li>
-                        </ul>
-                    </div>
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Teaching Assistant</h4>
+                                <p>University of Tehran</p>
+                            </div>
+                            <div class="timeline-date">2019 - 2020</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Crafted and evaluated assignments for graduate-level Data Analysis and Robotics courses.</li>
+                                <li>Instructed on neural networks and Machine Learning fundamentals for Mechatronics course.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-icon">🔬</div>
                 <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Research Assistant</h4>
-                        <p>TaarLab Human and Robot Interaction Laboratory</p>
-                    </div>
-                    <div class="timeline-date">2018 - 2022</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Architected a computer vision face recognition system with 95-97% accuracy in real-world conditions.</li>
-                            <li>Developed a deep learning path planner that generated paths 300x faster than classical methods with a 99% success rate.</li>
-                        </ul>
-                    </div>
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Research Assistant</h4>
+                                <p>TaarLab Human and Robot Interaction Laboratory</p>
+                            </div>
+                            <div class="timeline-date">2018 - 2022</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Architected a computer vision face recognition system with 95-97% accuracy in real-world conditions.</li>
+                                <li>Developed a deep learning path planner that generated paths 300x faster than classical methods with a 99% success rate.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">💼</div>
                 <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h4>Undergraduate Intern</h4>
-                        <p>Intelligent Control Systems Laboratory</p>
-                    </div>
-                    <div class="timeline-date">2016</div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Optimized a quadruped robot's software by converting its codebase from MATLAB to C#, enhancing performance and integration.</li>
-                        </ul>
-                    </div>
+                    <details>
+                        <summary>
+                            <div class="timeline-header">
+                                <h4>Undergraduate Intern</h4>
+                                <p>Intelligent Control Systems Laboratory</p>
+                            </div>
+                            <div class="timeline-date">2016</div>
+                        </summary>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Optimized a quadruped robot's software by converting its codebase from MATLAB to C#, enhancing performance and integration.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
         </div>
