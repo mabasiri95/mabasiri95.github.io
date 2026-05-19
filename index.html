@@ -217,7 +217,8 @@
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -235,6 +236,7 @@
         .project-card p {
             color: var(--gray);
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-tags {
@@ -249,6 +251,28 @@
             border-radius: 10px;
             font-size: 0.85rem;
             color: var(--light);
+        }
+
+        .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--secondary);
+        }
+        
+        a.project-card {
+            text-decoration: none;
+            color: inherit;
         }
 
         .contact-content {
@@ -383,6 +407,10 @@
                     <span class="project-tag">Time-Series</span>
                     <span class="project-tag">Graph Theory</span>
                 </div>
+                <div class="project-links">
+                    <a href="https://academic.oup.com/comnet/article/13/5/cnaf029/8259871" target="_blank" class="project-link">Paper</a>
+                    <a href="https://github.com/3sigmalab/SINDyG" target="_blank" class="project-link">GitHub</a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>Open-World Classification System</h3>
@@ -392,6 +420,9 @@
                     <span class="project-tag">Deep Learning</span>
                     <span class="project-tag">Classification</span>
                     <span class="project-tag">Novel Class Discovery</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.jair.org/index.php/jair/article/view/20947" target="_blank" class="project-link">Paper</a>
                 </div>
             </div>
             <div class="project-card">
@@ -403,6 +434,9 @@
                     <span class="project-tag">Healthcare AI</span>
                     <span class="project-tag">Neural Networks</span>
                 </div>
+                <div class="project-links">
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-82768-6_13" target="_blank" class="project-link">Paper</a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>Face Recognition for Social Robotics</h3>
@@ -413,6 +447,9 @@
                     <span class="project-tag">OpenCV</span>
                     <span class="project-tag">Production ML</span>
                 </div>
+                <div class="project-links">
+                    <a href="https://ieeexplore.ieee.org/document/9260698" target="_blank" class="project-link">Paper</a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>Autonomous Robot Path Planning</h3>
@@ -422,6 +459,10 @@
                     <span class="project-tag">MATLAB</span>
                     <span class="project-tag">Robotics</span>
                     <span class="project-tag">Control Systems</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://linkinghub.elsevier.com/retrieve/pii/S0921889023000234" target="_blank" class="project-link">Paper 1</a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9827047" target="_blank" class="project-link">Paper 2</a>
                 </div>
             </div>
             <div class="project-card">
@@ -434,7 +475,7 @@
                     <span class="project-tag">Data Analytics</span>
                 </div>
             </div>
-            <a href="https://mabasiri95.github.io/pokemon-level-optimizer/" target="_blank" class="project-card" style="text-decoration: none;">
+            <a href="https://mabasiri95.github.io/pokemon-level-optimizer/" target="_blank" class="project-card">
                 <h3>Pokemon Level Optimizer 🎮</h3>
                 <p>Interactive web application implementing greedy algorithm optimization for resource management. Calculates optimal leveling strategy to minimize coin expenditure while maximizing point gains using efficiency-based decision making.</p>
                 <div class="project-tags">
@@ -442,6 +483,9 @@
                     <span class="project-tag">Algorithm Design</span>
                     <span class="project-tag">Optimization</span>
                     <span class="project-tag">Interactive UI</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mabasiri95/pokemon-level-optimizer" target="_blank" class="project-link">GitHub</a>
                 </div>
             </a>
         </div>
