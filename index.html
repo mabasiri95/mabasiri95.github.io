@@ -367,6 +367,9 @@
             padding: 2rem;
             transition: all 0.3s ease;
             outline: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .timeline-card summary:hover {
@@ -483,6 +486,14 @@
         .fade-in {
             animation: fadeInUp 1s ease;
         }
+        
+        .chevron {
+            transition: transform 0.3s;
+        }
+
+        details[open] .chevron {
+            transform: rotate(90deg);
+        }
 
         @media (max-width: 900px) {
             .hero-grid {
@@ -562,7 +573,7 @@
                 <h3>AutoSINDy: Automated Discovery of Nonlinear Dynamics</h3>
                 <p class="summary">A framework that automates the discovery of nonlinear dynamics.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>A hybrid framework that automates the discovery of nonlinear dynamics by combining symbolic regression and sparse identification. It generates basis functions automatically, recovering ground-truth equations with 92.8% accuracy even in noisy conditions, and outperforming traditional methods in prediction and simplicity.</p>
                 </details>
                 <div class="project-tags">
@@ -580,7 +591,7 @@
                 <h3>Open-World Classification System</h3>
                 <p class="summary">An adaptive framework for identifying and categorizing previously unseen classes.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Built an adaptive framework for identifying and categorizing previously unseen classes in dynamic environments. Achieved 75-93% accuracy improvement across text, image, and sensor datasets, advancing beyond traditional closed-world assumptions.</p>
                 </details>
                 <div class="project-tags">
@@ -597,7 +608,7 @@
                 <h3>SINDyG: Graph-Informed Network Dynamics Discovery</h3>
                 <p class="summary">An algorithm that incorporates graph-informed regularization for the discovery of network dynamics.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Developed a novel algorithm incorporating graph-informed regularization into sparse regression for accurate discovery of network dynamics. Validated on Stuart-Landau oscillator networks with superior performance in identifying complex system behaviors.</p>
                 </details>
                 <div class="project-tags">
@@ -615,7 +626,7 @@
                 <h3>EEG-Based Alzheimer's Classification</h3>
                 <p class="summary">A framework for extracting EEG features to improve Alzheimer's detection.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Developed multilayer cross-frequency functional connectivity framework for extracting spatiotemporal EEG features. Achieved 15-20% accuracy improvement over baseline methods for early Alzheimer's disease detection.</p>
                 </details>
                 <div class="project-tags">
@@ -632,7 +643,7 @@
                 <h3>Database Design & Optimization for Job-Shop Accounting system</h3>
                 <p class="summary">A project that involved engineering a relational database structure and optimizing it.</p>
                  <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Engineered a relational database structure, optimizing data storage and indexing strategies (Azure SQL). Constructed a database application to execute complex SQL queries for efficient transaction management (Java, SQL).</p>
                 </details>
                 <div class="project-tags">
@@ -649,7 +660,7 @@
                 <h3>Face Recognition for Social Robotics</h3>
                 <p class="summary">A deep learning face recognition system for time-clock systems and service robots.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Architected and deployed a deep learning face recognition system achieving 95-97% accuracy under challenging real-world conditions. Implemented for time-clock systems and service robots with robust data preprocessing pipelines.</p>
                 </details>
                 <div class="project-tags">
@@ -666,7 +677,7 @@
                 <h3>Autonomous Robot Path Planning</h3>
                 <p class="summary">A project that involved creating path-planning algorithms for obstacle avoidance.</p>
                  <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Created physics-informed and ML-based path-planning algorithms with novel loss functions for superior obstacle avoidance. Modeled aerial robot formation control with security measures against cyber-physical attacks.</p>
                 </details>
                 <div class="project-tags">
@@ -684,7 +695,7 @@
                 <h3>Pokemon Level Optimizer 🎮</h3>
                 <p class="summary">An interactive web application that calculates the optimal leveling strategy.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>Interactive web application implementing greedy algorithm optimization for resource management. Calculates optimal leveling strategy to minimize coin expenditure while maximizing point gains using efficiency-based decision making.</p>
                 </details>
                 <div class="project-tags">
@@ -702,7 +713,7 @@
                 <h3>Other Selected Projects</h3>
                 <p class="summary">A collection of various machine learning and data analysis projects.</p>
                 <details>
-                    <summary>Read more</summary>
+                    <summary>Read more <span class="chevron">▶</span></summary>
                     <p>A collection of projects including a movie database console app, predictive analysis of cancer gene expression, credit card fraud detection, HR analytics on employee attrition, and student performance analysis.</p>
                 </details>
                 <div class="project-tags">
@@ -726,11 +737,14 @@
                 <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Instructor / Teaching Assistant</h4>
-                                <p>University of Oklahoma</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Instructor / Teaching Assistant</h4>
+                                    <p>University of Oklahoma</p>
+                                </div>
+                                <div class="timeline-date">2023 - Present</div>
                             </div>
-                            <div class="timeline-date">2023 - Present</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
@@ -748,11 +762,14 @@
                  <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Research Assistant</h4>
-                                <p>University of Oklahoma | Data Science & Analytics Institute</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Research Assistant</h4>
+                                    <p>University of Oklahoma | Data Science & Analytics Institute</p>
+                                </div>
+                                <div class="timeline-date">2022 - Present</div>
                             </div>
-                            <div class="timeline-date">2022 - Present</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
@@ -771,11 +788,14 @@
                  <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Machine Learning Engineer</h4>
-                                <p>Tosan Techno Company & TaarLab</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Machine Learning Engineer</h4>
+                                    <p>Tosan Techno Company & TaarLab</p>
+                                </div>
+                                <div class="timeline-date">2020</div>
                             </div>
-                            <div class="timeline-date">2020</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
@@ -792,11 +812,14 @@
                 <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Teaching Assistant</h4>
-                                <p>University of Tehran</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Teaching Assistant</h4>
+                                    <p>University of Tehran</p>
+                                </div>
+                                <div class="timeline-date">2019 - 2020</div>
                             </div>
-                            <div class="timeline-date">2019 - 2020</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
@@ -813,11 +836,14 @@
                 <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Research Assistant</h4>
-                                <p>TaarLab Human and Robot Interaction Laboratory</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Research Assistant</h4>
+                                    <p>TaarLab Human and Robot Interaction Laboratory</p>
+                                </div>
+                                <div class="timeline-date">2018 - 2022</div>
                             </div>
-                            <div class="timeline-date">2018 - 2022</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
@@ -834,11 +860,14 @@
                 <div class="timeline-card">
                     <details>
                         <summary>
-                            <div class="timeline-header">
-                                <h4>Undergraduate Intern</h4>
-                                <p>Intelligent Control Systems Laboratory</p>
+                            <div>
+                                <div class="timeline-header">
+                                    <h4>Undergraduate Intern</h4>
+                                    <p>Intelligent Control Systems Laboratory</p>
+                                </div>
+                                <div class="timeline-date">2016</div>
                             </div>
-                            <div class="timeline-date">2016</div>
+                            <span class="chevron">▶</span>
                         </summary>
                         <div class="timeline-body">
                             <ul>
