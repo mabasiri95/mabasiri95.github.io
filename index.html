@@ -289,143 +289,109 @@
             color: inherit;
         }
 
-        /* --- Timeline Section --- */
-        #journey {
-            padding: 5rem 5%;
+        /* --- Journey Section --- */
+        .journey-section h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 3rem;
         }
 
         .timeline {
             position: relative;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 2rem 0;
         }
 
-        .timeline::after {
+        .timeline::before {
             content: '';
             position: absolute;
-            width: 6px;
-            background-color: var(--primary);
+            width: 2px;
+            background-color: rgba(0, 168, 150, 0.2);
             top: 0;
             bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-            opacity: 0.3;
+            left: 20px;
         }
 
-        .timeline-container {
-            padding: 10px 40px;
+        .timeline-item {
+            margin-bottom: 3rem;
             position: relative;
-            background-color: inherit;
-            width: 50%;
+            padding-left: 60px;
         }
 
-        .timeline-container::after {
-            content: '';
+        .timeline-icon {
             position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: var(--dark);
-            border: 4px solid var(--secondary);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-left {
             left: 0;
+            top: -5px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--dark);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
         }
 
-        .timeline-right {
-            left: 50%;
-        }
-
-        .timeline-left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid var(--primary);
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent rgba(0, 168, 150, 0.2);
-        }
-
-        .timeline-right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid var(--primary);
-            border-width: 10px 10px 10px 0;
-            border-color: transparent rgba(0, 168, 150, 0.2) transparent transparent;
-        }
-
-        .timeline-right::after {
-            left: -16px;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
+        .timeline-card {
             background: rgba(42, 42, 42, 0.5);
             border: 1px solid rgba(0, 168, 150, 0.2);
-            position: relative;
             border-radius: 15px;
-            transition: all 0.3s;
+            padding: 2rem;
+            transition: all 0.3s ease;
         }
 
-        .timeline-content:hover {
-            transform: scale(1.03);
-            border-color: var(--primary);
+        .timeline-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 168, 150, 0.2);
         }
 
-        .timeline-content h3 {
-            font-size: 1.4rem;
+        .timeline-header h4 {
+            font-size: 1.25rem;
             color: var(--light);
-            margin-bottom: 0.5rem;
+            margin: 0;
         }
 
-        .timeline-content h4 {
-            font-size: 1rem;
-            font-weight: 500;
+        .timeline-header p {
             color: var(--secondary);
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            margin: 0;
         }
 
-        .timeline-content .date {
+        .timeline-date {
+            color: var(--gray);
             font-size: 0.9rem;
-            font-weight: bold;
-            color: var(--gray);
             margin-bottom: 1rem;
+            margin-top: 0.25rem;
         }
 
-        .timeline-content ul {
-            list-style-type: none;
-            padding-left: 0;
+        .timeline-body ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
         }
 
-        .timeline-content ul li {
-            margin-bottom: 0.5rem;
+        .timeline-body li {
             color: var(--gray);
-            padding-left: 20px;
+            margin-bottom: 0.75rem;
+            padding-left: 25px;
             position: relative;
         }
 
-        .timeline-content ul li::before {
-            content: '›';
+        .timeline-body li::before {
+            content: '→';
             position: absolute;
             left: 0;
             color: var(--primary);
             font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
         }
+
 
         .contact-content {
             max-width: 600px;
@@ -491,31 +457,6 @@
                 order: -1; /* Move image to the top on mobile */
                 max-width: 300px; 
                 margin: 0 auto;
-            }
-
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-container {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 15px;
-            }
-
-            .timeline-container::before {
-                left: 60px;
-                border: medium solid var(--primary);
-                border-width: 10px 10px 10px 0;
-                border-color: transparent rgba(0, 168, 150, 0.2) transparent transparent;
-            }
-
-            .timeline-left::after, .timeline-right::after {
-                left: 15px;
-            }
-
-            .timeline-right {
-                left: 0%;
             }
         }
 
@@ -690,45 +631,113 @@
         </div>
     </section>
 
-    <section id="journey">
+    <section id="journey" class="journey-section">
         <h2>My Journey</h2>
+
+        <h3>Experience</h3>
         <div class="timeline">
-            <div class="timeline-container timeline-left">
-                <div class="timeline-content">
-                    <div class="date">2022 - Present</div>
-                    <h3>PhD Candidate & Researcher</h3>
-                    <h4>University of Oklahoma</h4>
-                    <p>Pursuing a PhD in Data Science and Analytics while working as a Research and Teaching Assistant.</p>
-                    <ul>
-                        <li>Developed AutoSINDy, SINDyG, and other SciML frameworks.</li>
-                        <li>Instructed courses like "Programming in C" and "Python for Data Science".</li>
-                        <li>Mentored over 150 students in programming and data analytics concepts.</li>
-                    </ul>
+            <div class="timeline-item">
+                <div class="timeline-icon">👨‍🏫</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Instructor / Teaching Assistant</h4>
+                        <p>University of Oklahoma</p>
+                    </div>
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Instructed 150+ students over 4 semesters in C programming, adapting technical concepts for non-majors.</li>
+                            <li>Taught C programming and Linux/Unix workflows on the OU Supercomputing Cluster.</li>
+                            <li>Supported graduate-level Intelligent Data Analytics and Python for Data Science courses.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="timeline-container timeline-right">
-                <div class="timeline-content">
-                    <div class="date">2018 - 2022</div>
-                    <h3>Masters & Research Engineer</h3>
-                    <h4>University of Tehran & TaarLab</h4>
-                    <p>Completed an MS in Electrical and Computer Engineering while contributing to robotics and ML research.</p>
-                    <ul>
-                        <li>Architected face recognition systems with 95-97% accuracy for commercial robots.</li>
-                        <li>Developed novel deep learning path planners outperforming classical algorithms by over 300x.</li>
-                        <li>TA for graduate courses in Data Analysis and Robotics.</li>
-                    </ul>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">🔬</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Research Assistant</h4>
+                        <p>University of Oklahoma | Data Science & Analytics Institute</p>
+                    </div>
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Developed AutoSINDy, a SciML framework achieving a 92.8% ground-truth recovery rate, eliminating the 51.7% failure rate of standard SINDy.</li>
+                            <li>Built an open-world classification framework that improved accuracy from a 24-51% baseline to 75-93%.</li>
+                            <li>Created SINDyG for networked systems, reducing model complexity by 20-30% while increasing accuracy.</li>
+                            <li>Engineered an EEG analysis framework improving Alzheimer's classification accuracy by 15-20%.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="timeline-container timeline-left">
-                <div class="timeline-content">
-                    <div class="date">2013 - 2018</div>
-                    <h3>Bachelors & Intern</h3>
-                    <h4>Amirkabir University of Technology</h4>
-                    <p>Earned a BS in Electrical Engineering, gaining foundational experience in software development.</p>
-                    <ul>
-                        <li>Interned at the Intelligent Control Systems Laboratory.</li>
-                        <li>Optimized a quadruped robot's software by converting it from MATLAB to C#.</li>
-                    </ul>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">💼</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Machine Learning Engineer</h4>
+                        <p>Tosan Techno Company & TaarLab</p>
+                    </div>
+                    <div class="timeline-date">2020 - 2020</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Deployed a deep learning face recognition system for a commercial service robot and time-clock system.</li>
+                            <li>Managed a full-stack ML pipeline including data collection, preprocessing, and model optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">🔬</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Research Assistant</h4>
+                        <p>TaarLab Human and Robot Interaction Laboratory</p>
+                    </div>
+                    <div class="timeline-date">2018 - 2022</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Architected a computer vision face recognition system with 95-97% accuracy in real-world conditions.</li>
+                            <li>Developed a deep learning path planner that generated paths 300x faster than classical methods with a 99% success rate.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Education</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">🎓</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Doctor of Philosophy, Data Science and Analytics</h4>
+                        <p>University of Oklahoma</p>
+                    </div>
+                    <div class="timeline-date">2022 - Present</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🎓</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Master of Science, Electrical and Computer Engineering</h4>
+                        <p>University of Tehran</p>
+                    </div>
+                    <div class="timeline-date">2018 - 2022</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🎓</div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h4>Bachelor of Science, Electrical Engineering</h4>
+                        <p>Amirkabir University of Technology</p>
+                    </div>
+                    <div class="timeline-date">2013 - 2018</div>
                 </div>
             </div>
         </div>
@@ -785,7 +794,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .timeline-content, .hero-content, .hero-image').forEach(card => {
+        document.querySelectorAll('.project-card, .timeline-card, .hero-content, .hero-image').forEach(card => {
             observer.observe(card);
         });
     </script>
